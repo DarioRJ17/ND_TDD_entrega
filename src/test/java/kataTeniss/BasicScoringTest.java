@@ -48,6 +48,29 @@ public class BasicScoringTest {
         assertEquals("Love-Thirty", res);
     }
 
+    // Extra tests
+
+    @Test
+    void testPlayerOneScoresThrice_ShouldBeFortyLove() {
+        PointsTranslator translator = new PointsTranslator();
+        String res = translator.translate("3-0");
+        assertEquals("Forty-Love", res);
+    }
+
+    @Test
+    void testPlayerTwoScoresThrice_ShouldBeLoveForty() {
+        PointsTranslator translator = new PointsTranslator();
+        String res = translator.translate("0-3");
+        assertEquals("Love-Forty", res);
+    }
+
+    @Test
+    void testBothPlayersScoreOnce_ShouldBeThirtyAll() {
+        PointsTranslator translator = new PointsTranslator();
+        String res = translator.translate("2-2");
+        assertEquals("Thirty-All", res);
+    }
+
     // Negative cases
 
     @Test

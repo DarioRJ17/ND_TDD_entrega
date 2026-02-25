@@ -23,14 +23,30 @@ public class WinGameTest {
     @Test
     void testPlayerOneWinsByTwoPoints_ShouldBeWinPlayerOne() {
         PointsTranslator translator = new PointsTranslator();
-        String res = translator.translate("4-0");
+        String res = translator.translate("4-2");
         assertEquals("Player 1 wins", res);
     }
 
     @Test
     void testPlayerTwoWinsByTwoPoints_ShouldBeWinPlayerTwo() {
         PointsTranslator translator = new PointsTranslator();
-        String res = translator.translate("0-4");
+        String res = translator.translate("2-4");
+        assertEquals("Player 2 wins", res);
+    }
+
+    // Extra tests
+
+    @Test
+    void testPlayerOneWinsByTwoPointsLongGame_ShouldBeWinPlayerOne() {
+        PointsTranslator translator = new PointsTranslator();
+        String res = translator.translate("50-48");
+        assertEquals("Player 1 wins", res);
+    }
+
+    @Test
+    void testPlayerTwoWinsByTwoPointsLongGame_ShouldBeWinPlayerTwo() {
+        PointsTranslator translator = new PointsTranslator();
+        String res = translator.translate("16-18");
         assertEquals("Player 2 wins", res);
     }
 
