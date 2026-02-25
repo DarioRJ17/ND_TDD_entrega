@@ -54,7 +54,7 @@ public class WinGameTest {
 
     @Test
     void testWinningWithoutTwoPointDifference_ShouldThrowException() {
-        PointsTranslator translator = new PointsTranslator();
+        WinnerTranslator translator = new WinnerTranslator(); // fuerzo ya que sino elige el translator de advantage
         assertThrows(IllegalArgumentException.class,
                 () -> translator.translate("4-3"));  // sería ventaja
     }
